@@ -7,6 +7,7 @@ export default class Document extends NextDocument {
         <Head />
         <body className="body">
           <Main />
+          <div id="drawer-root" />
           <NextScript />
         </body>
       </Html>

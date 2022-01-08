@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
   const history = useRouter();
 
   return (
-    <div className="navbar">
+    <header className="navbar">
       <nav className={`container flex items-center ${NAV_MAX_WIDTH} py-4`}>
         <Link href="/">
           <a className="text-xl hover:no-underline font-bold">Tailwind starter</a>
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
           </LinkItem>
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
 

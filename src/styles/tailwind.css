@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* .drawer-root {
+  z-index: var(--drawer-root-z);
+  position: fixed;
+  inset: 0;
+} */
+
 @layer base {
   :root {
     --primary-color: #1fb2c8;
@@ -12,12 +18,13 @@
     --text-color-muted: #999999;
     --bg-color: 255, 251, 235;
     --nav-color: 255, 255, 255;
-    --paper-color:#fff;
+    --paper-color: #fff;
     --elevation-1: rgba(255, 255, 255, 0.05);
     --elevation-2: rgba(255, 255, 255, 0.07);
     --elevation-3: rgba(255, 255, 255, 0.09);
     --elevation-4: rgba(255, 255, 255, 0.12);
     --elevation-5: rgba(255, 255, 255, 0.18);
+    --drawer-root-z: 1200;
   }
   html[class="dark"] {
     --primary-color: #83c9ce;
@@ -27,14 +34,14 @@
     --text-color-muted: #cdcdcd;
     --bg-color: 37, 37, 37;
     --nav-color: 37, 37, 37;
-    --paper-color:#252525;
+    --paper-color: #252525;
   }
   html {
     scroll-behavior: smooth !important;
     font-family: "Inter", sans-serif;
   }
   body {
-    @apply min-h-screen transition-colors duration-200 bg-body text-main;
+    @apply transition-colors duration-200 bg-body text-main;
   }
 }
 @layer utilities {
@@ -69,5 +76,8 @@
   }
   .paper {
     @apply bg-paper rounded;
+  }
+  .drawer {
+    @apply z-drawer fixed  paper rounded-none elevation-5 overflow-y-auto;
   }
 }

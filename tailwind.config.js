@@ -5,6 +5,7 @@ const textColor = require("./src/styles/tailwindStyles/textColors");
 const backgroundColor = require("./src/styles/tailwindStyles/backgroundColors");
 const backgroundImage = require("./src/styles/tailwindStyles/backgroundImages");
 const screens = require("./src/styles/tailwindStyles/screens");
+const zIndex = require("./src/styles/tailwindStyles/zIndeces");
 
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
@@ -35,7 +36,8 @@ module.exports = {
       textColor,
       backgroundColor,
       backgroundImage,
-      screens
+      screens,
+      zIndex
     }
   },
   plugins: []
