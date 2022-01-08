@@ -10,8 +10,14 @@
     --text-color: #252525;
     --text-color-inverted: #fff;
     --text-color-muted: #999999;
-    --bg-color: rgba(255, 251, 235);
+    --bg-color: 255, 251, 235;
     --nav-color: 255, 255, 255;
+    --paper-color:#fff;
+    --elevation-1: rgba(255, 255, 255, 0.05);
+    --elevation-2: rgba(255, 255, 255, 0.07);
+    --elevation-3: rgba(255, 255, 255, 0.09);
+    --elevation-4: rgba(255, 255, 255, 0.12);
+    --elevation-5: rgba(255, 255, 255, 0.18);
   }
   html[class="dark"] {
     --primary-color: #83c9ce;
@@ -19,8 +25,9 @@
     --text-color: #fff;
     --text-color-inverted: #252525;
     --text-color-muted: #cdcdcd;
-    --bg-color: rgb(37, 37, 37);
+    --bg-color: 37, 37, 37;
     --nav-color: 37, 37, 37;
+    --paper-color:#252525;
   }
   html {
     scroll-behavior: smooth !important;
@@ -31,6 +38,21 @@
   }
 }
 @layer utilities {
+  .elevation-1 {
+    @apply shadow-sm bg-elevation-1;
+  }
+  .elevation-2 {
+    @apply shadow-md bg-elevation-2;
+  }
+  .elevation-3 {
+    @apply shadow-lg bg-elevation-3;
+  }
+  .elevation-4 {
+    @apply shadow-xl bg-elevation-4;
+  }
+  .elevation-5 {
+    @apply shadow-2xl bg-elevation-5;
+  }
 }
 @layer components {
   .btn {
@@ -44,5 +66,8 @@
   }
   .navbar {
     @apply fixed bg-opacity-25 bg-nav z-[1] backdrop-blur-md  top-0 left-0 right-0;
+  }
+  .paper {
+    @apply bg-paper rounded;
   }
 }

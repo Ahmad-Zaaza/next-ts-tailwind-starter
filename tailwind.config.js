@@ -3,6 +3,7 @@ const animation = require("./src/styles/tailwindStyles/animations/animations");
 const colors = require("./src/styles/tailwindStyles/colors");
 const textColor = require("./src/styles/tailwindStyles/textColors");
 const backgroundColor = require("./src/styles/tailwindStyles/backgroundColors");
+const backgroundImage = require("./src/styles/tailwindStyles/backgroundImages");
 const screens = require("./src/styles/tailwindStyles/screens");
 
 module.exports = {
@@ -33,6 +34,7 @@ module.exports = {
       colors,
       textColor,
       backgroundColor,
+      backgroundImage,
       screens
     }
   },
