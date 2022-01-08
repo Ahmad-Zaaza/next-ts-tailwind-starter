@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef, useEffect } from "react";
 import { useMemo } from "react";
 import { forwardRef } from "react";
 import Backdrop from "../StyledComponents/Backdrop";
@@ -13,16 +13,27 @@ interface IDrawerProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 const Drawer = forwardRef<HTMLDivElement, IDrawerProps>(
-  ({ children, onClose, open, anchor = "bottom" }, ref) => {
+  ({ children, onClose, open, anchor = "left" }, ref) => {
     const drawerStyles = useMemo(() => {
       return clsx("drawer ", {
         "right-0 top-0 h-full": anchor === "right",
         "left-0 top-0 h-full": anchor === "left",
-        "top-0 left-0 right-0 bottom-auto" : anchor === "top",
+        "top-0 left-0 right-0 bottom-auto": anchor === "top",
         "bottom-0 left-0 right-0 top-auto": anchor === "bottom"
       });
     }, [anchor]);
-
+    useEffect(() => {
+      if (open) {
+        if (document.body.clientHeight > window.innerHeight) { //FIXME:
+          document.body.style.overflow = "hidden";
+          document.body.style.paddingRight = "17px";
+        }
+      }
+      return () => {
+        document.body.style.overflow = "unset";
+        document.body.style.paddingRight = "unset";
+      };
+    }, [open]);
     const drawerVariants: Variants = useMemo(() => {
       switch (anchor) {
         case "left": {
@@ -94,7 +105,7 @@ const Drawer = forwardRef<HTMLDivElement, IDrawerProps>(
                   variants={drawerVariants}
                   initial="initial"
                   animate="animate"
-                  transition={{ ease: "easeIn",duration:0.175 }}
+                  transition={{ ease: "easeOut", duration: 0.175 }}
                   exit="exit"
                   className={drawerStyles}
                   ref={ref}

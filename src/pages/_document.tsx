@@ -5,9 +5,10 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head />
-        <body className="body">
+        <body >
           <Main />
           <div id="drawer-root" />
+          <div id="dialog-root" />
           <NextScript />
         </body>
       </Html>

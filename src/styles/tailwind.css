@@ -3,12 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .drawer-root {
-  z-index: var(--drawer-root-z);
-  position: fixed;
-  inset: 0;
-} */
-
 @layer base {
   :root {
     --primary-color: #1fb2c8;
@@ -25,6 +19,7 @@
     --elevation-4: rgba(255, 255, 255, 0.12);
     --elevation-5: rgba(255, 255, 255, 0.18);
     --drawer-root-z: 1200;
+    --dialog-root-z: 1100;
   }
   html[class="dark"] {
     --primary-color: #83c9ce;
@@ -41,7 +36,7 @@
     font-family: "Inter", sans-serif;
   }
   body {
-    @apply transition-colors duration-200 bg-body text-main;
+    @apply min-h-screen transition-colors duration-200 bg-body text-main;
   }
 }
 @layer utilities {
@@ -79,5 +74,8 @@
   }
   .drawer {
     @apply z-drawer fixed  paper rounded-none elevation-5 overflow-y-auto;
+  }
+  .dialog {
+    @apply m-4 paper elevation-5 overflow-y-auto;
   }
 }
