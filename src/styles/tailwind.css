@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #1fb2c8;
+    --secondary-color: #d75449;
+    --text-color: #252525;
+    --text-color-inverted: #fff;
+    --text-color-muted: #999999;
+    --bg-color: rgba(255, 251, 235);
+    --nav-color: 255, 255, 255;
+  }
+  html[class="dark"] {
+    --primary-color: #83c9ce;
+    --secondary-color: #e09794;
+    --text-color: #fff;
+    --text-color-inverted: #252525;
+    --text-color-muted: #cdcdcd;
+    --bg-color: rgb(37, 37, 37);
+    --nav-color: 37, 37, 37;
+  }
+  html {
+    scroll-behavior: smooth !important;
+    font-family: "Inter", sans-serif;
+  }
+  body {
+    @apply min-h-screen transition-colors duration-200 bg-body text-main;
+  }
+}
+@layer utilities {
+}
+@layer components {
+  .btn {
+    @apply px-2 py-2 font-system rounded-md  inline-flex items-center justify-center shadow-md;
+  }
+  .btn-lg {
+    @apply px-6 py-4 text-xl;
+  }
+  .btn-primary {
+    @apply font-semibold  bg-primary hover:-translate-y-1 hover:shadow-lg transition-transform;
+  }
+  .navbar {
+    @apply fixed bg-opacity-25 bg-nav z-[1] backdrop-blur-md  top-0 left-0 right-0;
+  }
+}
